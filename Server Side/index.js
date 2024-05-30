@@ -13,6 +13,10 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use(cookieParser())
+app.get("/test", async (req, res)=>{console.log("hello");
+    return res.json({"msg": "connected"});
+})
+
 app.use('/auth', adminRouter)
 app.use('/employee', EmployeeRouter)
 app.use(express.static('Public'))

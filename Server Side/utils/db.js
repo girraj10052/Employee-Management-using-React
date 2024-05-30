@@ -2,17 +2,17 @@ import mysql from 'mysql'
 import mysql1 from 'mysql2/promise'
 
 const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "employeems"
+    host: "sql12.freesqldatabase.com",
+    user: "sql12710628",
+    password: "bpefP6WUva",
+    database: "sql12710628"
 })
 
 const con1 = mysql1.createPool({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "employeems"
+    host: "sql12.freesqldatabase.com",
+    user: "sql12710628",
+    password: "bpefP6WUva",
+    database: "sql12710628"
 })
 
 con.connect(function(err) {
