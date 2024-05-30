@@ -8,5 +8,7 @@ This is a working project based on react and live link of the project is https:/
 3. REACT
 4. NODE
 5. MYSQL
+6. FREESQLDATABASE for mysql Database
+7. Render for backend Deployment
 
 Login Credentials will be in the zip file
