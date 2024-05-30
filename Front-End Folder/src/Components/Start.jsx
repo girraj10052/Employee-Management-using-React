@@ -48,6 +48,7 @@ const Start = () => {
         </div>
       </div>
     </div>
+          <span>Designed By:- Girraj Bihari Gupta</span>
       </div>
      </div>
      </div>
