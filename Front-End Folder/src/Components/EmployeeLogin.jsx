@@ -43,7 +43,7 @@ const EmployeeLogin = () => {
                     <input type="password" name='password' placeholder='Enter Password'
                      onChange={(e) => setValues({...values, password : e.target.value})} className='form-control rounded-0'/>
                 </div>
-                <button className='btn btn-success w-100 rounded-0 mb-2'>Log in</button>
+                <button className='btn btn-success rounded-0 mb-2'>Log in</button>
                 <div className='mb-1'> 
                     <input type="checkbox" name="tick" id="tick" className='me-2'/>
                     <label htmlFor="password">You are Agree with terms & conditions</label>
