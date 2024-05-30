@@ -1,5 +1,6 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+// import API_URL from '../../config.js'
 
 const Home = () => {
   const [adminTotal, setAdminTotal] = useState(0)
@@ -12,7 +13,7 @@ const Home = () => {
   const [averageDepartmentSalary, setAverageDepartmentSalary] = useState(null);
   const [admins, setAdmins] = useState([])
 
-  useEffect(() => {
+  useEffect(() => {~
     adminCount();
     employeeCount();
     salaryCount();
@@ -20,7 +21,7 @@ const Home = () => {
   }, [])
 
   const AdminRecords = () => {
-    axios.get('http://localhost:3000/auth/admin_records')
+    axios.get('https://backend-or4n.onrender.com/auth/admin_records')
     .then(result => {
       if(result.data.Status) {
         setAdmins(result.data.Result)
@@ -30,7 +31,7 @@ const Home = () => {
     })
   }
   const adminCount = () => {
-    axios.get('http://localhost:3000/auth/admin_count')
+    axios.get('https://backend-or4n.onrender.com/auth/admin_count')
     .then(result => {
       if(result.data.Status) {
         setAdminTotal(result.data.Result[0].admin)
@@ -38,7 +39,7 @@ const Home = () => {
     })
   }
   const employeeCount = () => {
-    axios.get('http://localhost:3000/auth/employee_count')
+    axios.get('https://backend-or4n.onrender.com/auth/employee_count')
     .then(result => {
       if(result.data.Status) {
         setemployeeTotal(result.data.Result[0].employee)
@@ -46,7 +47,7 @@ const Home = () => {
     })
   }
   const salaryCount = () => {
-    axios.get('http://localhost:3000/auth/salary_count')
+    axios.get('https://backend-or4n.onrender.com/auth/salary_count')
     .then(result => {
       if(result.data.Status) {
         setSalaryTotal(result.data.Result[0].salaryOFEmp)
@@ -59,7 +60,7 @@ const Home = () => {
   const handleCalculateAverageSalary = () => {
     if (selectedCategory) {
       axios
-        .get(`http://localhost:3000/auth/average_salary/${selectedCategory}`)
+        .get(`https://backend-or4n.onrender.com/auth/average_salary/${selectedCategory}`)
         .then((result) => {
            console.log(result);
           if (result.data.Status) {
@@ -76,7 +77,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/employee")
+      .get("https://backend-or4n.onrender.com/auth/employee")
       .then((result) => {
         if (result.data.Status) {
           setEmployee(result.data.Result);
@@ -88,7 +89,7 @@ const Home = () => {
       .catch((err) => console.log(err));
 
       axios
-      .get("http://localhost:3000/auth/category")
+      .get("https://backend-or4n.onrender.com/auth/category")
       .then((result) => {
         if (result.data.Status) {
           setCategory(result.data.Result);

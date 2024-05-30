@@ -5,8 +5,15 @@ import { Link, useNavigate } from "react-router-dom";
 
 const categoryName = {
   "1": "Information Technology",
+  "2": "Sales",
   "3": "Backend Development",
-  "4": "Business Development"
+  "4": "Business Development",
+  "5": "Customer Service",
+  "6": "Operations",
+  "7": "Human Resources (HR)",
+  "8": "Finance",
+  "9": "Marketing",
+  
 }
 
 const Employee = () => {
@@ -31,7 +38,7 @@ const Employee = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/employee")
+      .get("https://backend-or4n.onrender.com/auth/employee")
       .then((result) => {
         if (result.data.Status) {
           setEmployee(result.data.Result);
@@ -48,7 +55,7 @@ const Employee = () => {
 
     if (searchValue.trim() === "") {
       // Fetch all employees if search term is empty
-      axios.get("http://localhost:3000/auth/employee")
+      axios.get("https://backend-or4n.onrender.com/auth/employee")
         .then((result) => {
           if (result.data.Status) {
             setEmployee(result.data.Result);
@@ -62,7 +69,7 @@ const Employee = () => {
     }
 
     axios
-      .get(`http://localhost:3000/auth/employee/search?q=%${searchValue}%`)
+      .get(`https://backend-or4n.onrender.com/auth/employee/search?q=%${searchValue}%`)
       .then((result) => {
         if (result.data.Status) {
           setEmployee(result.data.Result);
@@ -77,7 +84,7 @@ const Employee = () => {
 
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:3000/auth/delete_employee/'+id)
+    axios.delete('https://backend-or4n.onrender.com/auth/delete_employee/'+id)
     .then(result => {
         if(result.data.Status) {
             window.location.reload()
@@ -132,12 +139,12 @@ const Employee = () => {
             </tr>
           </thead>
           <tbody>
-            {employee.map((e) => (
-              <tr>
+            {employee.map((e,idx) => (
+              <tr key={idx}>
                 <td>{e.name}</td>
                 <td>
                   <img
-                    src={`http://localhost:3000/Images/` + e.image}
+                    src={`https://backend-or4n.onrender.com/Images/` + e.image}
                     className="employee_image"
                   />
                 </td>
